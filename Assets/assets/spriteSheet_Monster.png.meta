@@ -617,7 +617,7 @@ TextureImporter:
         width: 3
         height: 12
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -638,7 +638,7 @@ TextureImporter:
         width: 16
         height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -646,6 +646,27 @@ TextureImporter:
       bones: []
       spriteID: 2dca581bbcbb88e45a90bdecc2b4085f
       internalID: -1608022012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wall_6
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 205
+        width: 32
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3212d1d19aa0f9843bb71ef395a5b011
+      internalID: 1484440248
       vertices: []
       indices: 
       edges: []
@@ -666,6 +687,7 @@ TextureImporter:
       wall_2: 852277560
       spriteSheet_Monster_3: 1966936175
       sword: 418495076
+      wall_6: 1484440248
       wall_1: -1457584966
       can_1: 1741600702
       box_1: 616485993
