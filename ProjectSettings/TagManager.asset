@@ -47,6 +47,9 @@ TagManager:
   - name: walls
     uniqueID: 3830322867
     locked: 0
+  - name: objects
+    uniqueID: 3350835425
+    locked: 0
   - name: colliders
     uniqueID: 2056185305
     locked: 0
