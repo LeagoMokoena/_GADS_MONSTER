@@ -26,4 +26,9 @@ public class collider : MonoBehaviour
             hits[i] = null;
         }
     }
+
+    protected virtual void oncollide(Collider2D coll)
+    {
+        Debug.Log(coll.name);
+    }
 }

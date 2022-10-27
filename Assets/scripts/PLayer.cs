@@ -38,7 +38,7 @@ public class PLayer : MonoBehaviour
         hit = Physics2D.BoxCast(transform.position, boxcollider.size, 0, new Vector2(0, move.x), Mathf.Abs(move.x * Time.deltaTime), LayerMask.GetMask("Actor", "Blocking"));
         if (hit.collider == null)
         {
-            transform.Translate(0, move.x * Time.deltaTime, 0);
+            transform.Translate(move.x * Time.deltaTime,0, 0);
         }
     }
 

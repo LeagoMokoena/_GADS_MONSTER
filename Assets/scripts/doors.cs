@@ -3,27 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class doors : MonoBehaviour
+public class doors : collider
 {
     public string room;
 
-    protected override void oncollision(Collider2D collider)
+    protected override void oncollide(Collider2D collider)
     {
         if(collider.name == "Player")
         {
             SceneManager.LoadScene(room);
         }
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }
