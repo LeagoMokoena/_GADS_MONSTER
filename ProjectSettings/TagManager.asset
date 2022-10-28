@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - can
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   - name: floor
     uniqueID: 876039497
     locked: 0
+  - name: player
+    uniqueID: 617899319
+    locked: 0
   - name: walls
     uniqueID: 3830322867
     locked: 0
@@ -52,7 +56,4 @@ TagManager:
     locked: 0
   - name: colliders
     uniqueID: 2056185305
-    locked: 0
-  - name: player
-    uniqueID: 617899319
     locked: 0

@@ -5,8 +5,8 @@ using UnityEngine;
 public class camera_controller : MonoBehaviour
 {
     public Transform tar;
-    public float hbour = 0.15f;
-    public float vbour = 0.05f;
+    public float hbour;
+    public float vbour;
 
     private void LateUpdate()
     {
