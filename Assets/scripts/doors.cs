@@ -3,15 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class doors : collider
+public class doors : MonoBehaviour
 {
     public string room;
 
-    protected override void oncollide(Collider2D collider)
+    private void Start()
     {
-        if(collider.name == "Player")
-        {
-            SceneManager.LoadScene(room);
-        }
+        DontDestroyOnLoad(gameObject);
+    }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        SceneManager.LoadScene(room);
     }
 }
