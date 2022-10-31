@@ -13,12 +13,18 @@ public class monsterCon : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        
+        tar = FindObjectOfType<PLayer>().transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        follow();
+    }
+
+    public void follow()
+    {
+        transform.position = Vector3.MoveTowards(transform.position, tar.transform.position, sp * Time.deltaTime);
+
     }
 }
