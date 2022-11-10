@@ -6,9 +6,9 @@ using TMPro;
 
 public class energy_detecter : MonoBehaviour
 {
-    public Slider slid;
-    public GameObject[] cans;
-
+    public float time = 1f;
+    public int currEnergy;
+    public int maxEnergy;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,14 +18,21 @@ public class energy_detecter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        for(int i =0; i < cans.Length; i++)
+
+        time -= Time.deltaTime;
+        if(time <= 0)
         {
-            if(cans[i].gameObject == null)
-            {
-                slid.value++;
-            }
+            currEnergy -= 5;
+            time = 3f;
         }
+    }
 
-
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "can" && currEnergy != maxEnergy)
+        {
+            currEnergy += 10;
+            Destroy(collision.gameObject);
+        }
     }
 }
