@@ -14,6 +14,7 @@ public class Ui_manager : MonoBehaviour
     {
         He = FindObjectOfType<health>();
         energy = FindObjectOfType<energy_detecter>();
+        DontDestroyOnLoad(gameObject);
     }
 
     // Update is called once per frame
@@ -24,10 +25,5 @@ public class Ui_manager : MonoBehaviour
         bar.value = He.currHealth;
         ener.maxValue = energy.maxEnergy;
         ener.value = energy.currEnergy;
-
-        if (energy.currEnergy <= 0)
-        {
-            He.currHealth -= 1;
-        }
     }
 }

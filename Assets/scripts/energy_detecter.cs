@@ -6,7 +6,7 @@ using TMPro;
 
 public class energy_detecter : MonoBehaviour
 {
-    public float time = 1f;
+    public float time = 5f;
     public int currEnergy;
     public int maxEnergy;
     // Start is called before the first frame update
@@ -23,7 +23,7 @@ public class energy_detecter : MonoBehaviour
         if(time <= 0)
         {
             currEnergy -= 5;
-            time = 3f;
+            time = 5f;
         }
     }
 

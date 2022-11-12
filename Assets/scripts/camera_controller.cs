@@ -5,13 +5,13 @@ using UnityEngine;
 public class camera_controller : MonoBehaviour
 {
     public Transform tar;
-    public float hbour;
-    public float vbour;
+    public float hbour = 0.15f;
+    public float vbour = 0.05f;
 
     private void LateUpdate()
     {
         float delx = tar.position.x - transform.position.x;
-        if(delx > hbour || delx < -delx)
+        if(delx > hbour || delx < -hbour)
         {
             if(transform.position.x < tar.position.x)
             {
@@ -23,8 +23,8 @@ public class camera_controller : MonoBehaviour
             }
         }
         
-        float dely = tar.position.x - transform.position.x;
-        if(dely > vbour || dely < -delx)
+        float dely = tar.position.y - transform.position.y;
+        if(dely > vbour || dely < -vbour)
         {
             if(transform.position.y < tar.position.y)
             {

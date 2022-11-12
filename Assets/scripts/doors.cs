@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class doors : MonoBehaviour
 {
-    public string room;
+    public GameObject room;
 
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        SceneManager.LoadScene(room);
+        room.SetActive(false);
     }
 }
