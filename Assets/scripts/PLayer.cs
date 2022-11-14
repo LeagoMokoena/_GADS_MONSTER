@@ -15,7 +15,6 @@ public class PLayer : MonoBehaviour
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Update()
@@ -27,7 +26,7 @@ public class PLayer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("can"))
+        if (collision.gameObject.CompareTag("can") || collision.gameObject.CompareTag("chest"))
         {
             Destroy(collision.gameObject);
         }

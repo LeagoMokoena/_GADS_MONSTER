@@ -7,6 +7,7 @@ using TMPro;
 public class energy_detecter : MonoBehaviour
 {
     public float time = 5f;
+    public float time3 = 3f;
     public int currEnergy;
     public int maxEnergy;
     // Start is called before the first frame update
@@ -24,6 +25,16 @@ public class energy_detecter : MonoBehaviour
         {
             currEnergy -= 5;
             time = 5f;
+        }
+
+        if(currEnergy <= 0)
+        {
+            time -= Time.deltaTime;
+            if (time <= 0)
+            {
+                FindObjectOfType<health>().currHealth -= 5;
+                time = 3f;
+            }
         }
     }
 
