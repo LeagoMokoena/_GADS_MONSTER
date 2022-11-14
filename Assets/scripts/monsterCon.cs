@@ -5,7 +5,7 @@ using UnityEngine;
 public class monsterCon : MonoBehaviour
 {
     private Transform tar;
-    private Transform station;
+    public Transform station;
     [SerializeField]
     private float sp;
     [SerializeField]
@@ -24,6 +24,10 @@ public class monsterCon : MonoBehaviour
         if (Vector3.Distance(tar.position, transform.position) <= mxran && Vector3.Distance(tar.position, transform.position) >= mnran)
         {
             follow();
+        }
+        else
+        {
+            home();
         }
     }
 
