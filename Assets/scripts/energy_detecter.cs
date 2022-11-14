@@ -7,9 +7,11 @@ using TMPro;
 public class energy_detecter : MonoBehaviour
 {
     public float time = 5f;
-    public float time3 = 3f;
+    public float time3 = 8f;
     public int currEnergy;
     public int maxEnergy;
+    public GameObject shield;
+    public bool _shiled = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,11 +21,26 @@ public class energy_detecter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _shiled = true;
+            shield.SetActive(true);
+   
+        }
+
+        time3 -= Time.deltaTime;
+        if (time3 <= 0)
+        {
+            currEnergy -= 10;
+            shield.SetActive(false);
+            time3 = 8f;
+            _shiled = false;
+        }
 
         time -= Time.deltaTime;
         if(time <= 0)
         {
-            currEnergy -= 5;
+            currEnergy -= 2;
             time = 5f;
         }
 
@@ -38,9 +55,9 @@ public class energy_detecter : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.collider.tag == "can" && currEnergy != maxEnergy)
+        if (collision.gameObject.CompareTag("can") && currEnergy != maxEnergy)
         {
             currEnergy += 10;
             Destroy(collision.gameObject);

@@ -8,7 +8,7 @@ public class PLayer : MonoBehaviour
 
     [SerializeField]
     private float sp;
-
+    [SerializeField] private AudioSource collect;
 
 
     // Start is called before the first frame update
@@ -28,6 +28,7 @@ public class PLayer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("can") || collision.gameObject.CompareTag("chest"))
         {
+            collect.Play();
             Destroy(collision.gameObject);
         }
     }

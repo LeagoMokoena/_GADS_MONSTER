@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class settings : MonoBehaviour
 {
-    public AudioMixer mixer;
+    [SerializeField] Slider volumn;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,8 +19,8 @@ public class settings : MonoBehaviour
         
     }
 
-    public void volumesetUp(float volumn)
+    public void volumesetUp()
     {
-        mixer.SetFloat("volumn", volumn);
+        AudioListener.volume = volumn.value;
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class enemyAttack : MonoBehaviour
 {
     private health player;
+    private energy_detecter plr;
     public float wait = 2f;
     public bool touched;
     [SerializeField]
@@ -13,6 +14,7 @@ public class enemyAttack : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<health>();
+        plr = FindObjectOfType<energy_detecter>();
     }
 
     // Update is called once per frame
@@ -32,7 +34,7 @@ public class enemyAttack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Player")
+        if(collision.collider.tag == "Player" && plr._shiled == false)
         {
             collision.gameObject.GetComponent<health>().hurt(10);
         }
@@ -40,7 +42,7 @@ public class enemyAttack : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        if(collision.collider.tag == "Player")
+        if(collision.collider.tag == "Player" && plr._shiled == false)
         {
             touched = true;
         }
